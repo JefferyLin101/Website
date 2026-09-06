@@ -1,241 +1,104 @@
 <!DOCTYPE html>
+<!-- Tells the browser this document uses modern HTML5. -->
 <html lang="en">
+<!-- The opening html tag starts the entire webpage. The lang attribute gives extra information about the tag, and "en" means English. This comment explains the line above, so it has no NEXT LINE marker. -->
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Jeffery Lin - Flexible Technical Writer">
-	<title>Jeffery Lin | Flexible Technical Writer</title>
-	<link rel="stylesheet" href="styles.css">
-	<!--
-	<style>
-		:root {
-			--ink: #1e293b;
-			--muted: #526174;
-			--paper: #f7f9fc;
-			--surface: #ffffff;
-			--line: #dbe3ec;
-			--accent: #1d5d72;
-			--accent-soft: #e7f1f4;
-			--max-width: 1120px;
-		}
-
-		* {
-			box-sizing: border-box;
-		}
-
-		html {
-			scroll-behavior: smooth;
-		}
-
-		body {
-			margin: 0;
-			color: var(--ink);
-			background: var(--paper);
-			font-family: Georgia, "Times New Roman", serif;
-			line-height: 1.6;
-		}
-
-		.site-header {
-			position: sticky;
-			top: 0;
-			z-index: 10;
-			border-bottom: 1px solid rgba(219, 227, 236, 0.95);
-			background: rgba(255, 255, 255, 0.96);
-			box-shadow: 0 4px 18px rgba(30, 41, 59, 0.06);
-		}
-
-		.header-inner {
-			display: grid;
-			grid-template-columns: minmax(0, 1fr) auto;
-			gap: 2.5rem;
-			align-items: center;
-			max-width: var(--max-width);
-			min-height: 224px;
-			margin: 0 auto;
-			padding: 2.5rem 2rem 1.75rem;
-		}
-
-		.eyebrow {
-			margin: 0 0 0.6rem;
-			color: var(--accent);
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 0.78rem;
-			font-weight: 700;
-			letter-spacing: 0.12em;
-			text-transform: uppercase;
-		}
-
-		h1,
-		h2 {
-			margin: 0;
-			line-height: 1.15;
-		}
-
-		h1 {
-			max-width: 700px;
-			font-size: clamp(2.2rem, 5vw, 4.4rem);
-			font-weight: 700;
-			letter-spacing: -0.02em;
-		}
-
-		.tagline {
-			margin: 0.8rem 0 1.45rem;
-			color: var(--muted);
-			font-size: clamp(1.05rem, 2vw, 1.3rem);
-		}
-
-		.site-nav {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem 1.4rem;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 0.9rem;
-			font-weight: 700;
-		}
-
-		.site-nav a {
-			color: var(--ink);
-			text-decoration: none;
-		}
-
-		.site-nav a:hover,
-		.site-nav a:focus-visible {
-			color: var(--accent);
-		}
-
-		.contact {
-			min-width: 210px;
-			padding-left: 1.5rem;
-			border-left: 1px solid var(--line);
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 0.9rem;
-		}
-
-		.contact-label {
-			margin: 0 0 0.6rem;
-			color: var(--muted);
-			font-size: 0.75rem;
-			font-weight: 700;
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
-		}
-
-		.contact p {
-			margin: 0.3rem 0;
-		}
-
-		.contact a {
-			color: var(--accent);
-			text-decoration: none;
-		}
-
-		.contact a:hover,
-		.contact a:focus-visible {
-			text-decoration: underline;
-		}
-
-		main {
-			max-width: var(--max-width);
-			margin: 0 auto;
-			padding: 6rem 2rem 8rem;
-		}
-
-		.about {
-			min-height: 48vh;
-			text-align: center;
-			scroll-margin-top: 250px;
-		}
-
-		.about h2 {
-			font-size: clamp(2rem, 4vw, 3.2rem);
-		}
-
-		.about-copy {
-			max-width: 680px;
-			margin: 1.5rem auto 0;
-			color: var(--muted);
-			font-size: 1.1rem;
-		}
-
-		.future-section {
-			min-height: 20vh;
-			scroll-margin-top: 250px;
-			border-top: 1px solid var(--line);
-			margin-top: 5rem;
-			padding-top: 2rem;
-			color: var(--muted);
-			text-align: center;
-		}
-
-		.future-section h2 {
-			font-size: 1.5rem;
-			color: var(--ink);
-		}
-
-		@media (max-width: 700px) {
-			.header-inner {
-				grid-template-columns: 1fr;
-				gap: 1.5rem;
-				min-height: 0;
-				padding: 1.75rem 1.25rem 1.5rem;
-			}
-
-			.contact {
-				min-width: 0;
-				padding: 1.25rem 0 0;
-				border-top: 1px solid var(--line);
-				border-left: 0;
-			}
-
-			main {
-				padding: 4rem 1.25rem 6rem;
-			}
-
-			.about,
-			.future-section {
-				scroll-margin-top: 355px;
-			}
-		}
-	</style>
+	<!-- The head contains setup information for the browser.
+		 Most of what is inside head does not appear as page content.
 	-->
+	<meta charset="UTF-8">
+	<!-- Allows the page to display letters and symbols correctly. -->
+	<!-- charset is the attribute name; "UTF-8" is its text value. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Makes the layout fit properly on phones and other screen sizes. -->
+	<!-- name and content are attributes; the content value tells phones how to size the page. -->
+	<meta name="description" content="Jeffery Lin - Portfolio">
+	<!-- Gives search engines and browser previews a short description. -->
+	<!-- The words inside content="..." are information for browsers, not visible page text. -->
+	<title>Jeffery Lin | Portfolio</title>
+	<!-- This text appears in the browser tab. -->
+	<link rel="stylesheet" href="styles.css">
+	<!-- Loads all of the page's visual styling from the separate CSS file. -->
+	<!-- rel says what the linked file is; href says where the file is located. -->
 </head>
 <body>
+<!-- Everything inside body can appear visibly in the browser window. -->
 	<header class="site-header">
+	<!-- The header is the banner at the top of every section. -->
+		<!-- class="site-header" gives this header a reusable CSS name. -->
+		<!-- Why this class exists: the header tag gives meaning, while this class gives the banner its unique sticky design. -->
+		<!-- site-header is not something that's predefined in HTML.  It's a custom class name we created and defined in styles.css ourselves. -->
 		<div class="header-inner">
+		<!-- This wrapper keeps the banner content centered and organized. -->
+			<!-- Why this class exists: this div needs a two-column layout, but other divs should not automatically get one. -->
+			<!-- This class creates the banner's two columns: text on the left and contact details on the right. -->
 			<div>
-				<p class="eyebrow">Technical writing portfolio</p>
-				<h1>Jeffery Lin - Flexible Technical Writer</h1>
+			<!-- This div groups the title, description, and navigation on the left. -->
+				<p class="eyebrow">Technical writer</p>
+				<!-- p means paragraph; class="eyebrow" gives this paragraph its small label appearance. -->
+				<!-- Similar to header classes, 'eyebrow' is a custom class name we created and defined in styles.css for this specific purpose. -->
+				<h1>Jeffery Lin</h1>
 				<p class="tagline">Closing the gap between people and technology.</p>
 				<nav class="site-nav" aria-label="Primary navigation">
-					<a href="#about">About Me</a>
-					<a href="#portfolio">Portfolio</a>
-					<a href="#resume">Resume</a>
+					<!-- 'nav' identifies a group of navigation links; aria-label gives screen readers a helpful name. -->
+					<!-- 'aria-' is an attribute defined by WAI-ARIA, which is an accessiblity standard.-->
+					<!-- It allows accessibility tools such as screen readers to better understand the page's structure. -->
+					<!-- While we technically do not need to use aria attributes, they improve accessibility. -->
+					<!-- aria-label is a predefined attribute that allows you to directly provide a label for an element in the quotes. -->
+					<a href="index.html" aria-current="page">About Me</a>
+					<!-- This link opens the separate About Me page. -->
+					<!-- 'a' defines a hyperlink; href is its destination; index.html tells the browser which file to open. -->
+					<a href="portfolio.html">Portfolio</a>
+					<a href="resume.html">Resume</a>
 				</nav>
 			</div>
 
 			<aside class="contact" aria-label="Contact information">
+			<!-- The aside holds contact information separate from the main content. -->
+				<!-- 'aside' functions similarly to div; it's just named differently to indicate that it contains supporting content. -->
+				<!-- This is useful for accessibility and semantic structure, so that not everything is marked up as div.-->
+				<!-- aside does not automatically create a new line, unlike div. -->
+				<!-- aside also doesn't automatically format itself 'aside'; its formatting depends on the CSS class applied to it. -->
+				<!-- "contact" creates the right-side column, its divider, its spacing, and its font style. -->
 				<p class="contact-label">Get in touch</p>
-				<p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-				<p><a href="tel:+10000000000">(000) 000-0000</a></p>
+				<p><a href="mailto:linjeffery101@gmail.com">linjeffery101@gmail.com</a></p>
+				<!-- 'mailto:' tells the browser to open an email program; the visible text is the link label. -->
+				<!-- The characters after the 'mailto:' define the email address to be used.-->
+				<!-- The text after the parenthesis is what will be displayed to the user. -->
+				<p><a href="tel:+19726237917">(972) 623-7917</a></p>
+				<!-- 'tel:' tells a phone to open the dialer with this number. -->
+				<!-- The characters after the 'tel:' define the phone number to be used.-->
+				<!-- The text after the parenthesis is what will be displayed to the user. -->
 			</aside>
 		</div>
 	</header>
 
 	<main>
+		<!-- main tells browsers and screen readers this is the page's primary content. -->
 		<section class="about" id="about" aria-labelledby="about-heading">
+			<!-- 'section' marks a distinct content area; class="about" connects it to .about in CSS. -->
+			<!-- 'section' is similar to 'aside' in that it functions like 'div' but is used for semantics and accessibility. -->
+			<!-- id is a unique identifier that no other element has. It helps with linking css and javascript to specific elements -->
 			<h2 id="about-heading">About Me</h2>
-			<p class="about-copy">
-				I am a technical writer who makes complex ideas clear, useful, and approachable.
-				I create documentation that helps people understand technology and use it with confidence.
-			</p>
-		</section>
-
-		<section class="future-section" id="portfolio" aria-labelledby="portfolio-heading">
-			<h2 id="portfolio-heading">Portfolio</h2>
-		</section>
-
-		<section class="future-section" id="resume" aria-labelledby="resume-heading">
-			<h2 id="resume-heading">Resume</h2>
+			<!-- The id lets the section's accessibility label point to this heading. -->
+			<div class="about-layout">
+				<div class="about-content">
+					<p class="about-subtitle">Jeffery Lin, team superbooster</p>
+					<p class="about-copy">
+				I am a Texas-born technical writer who started out in computer science but has since expanded into technical writing.
+				Although I am newer to the field, this makes me a flexible and adaptable writer who is eager to learn and grow.
+				What I lack in experience, I make up for in dedication and ability to quickly learn.
+					</p>
+					<p class="about-copy">
+				I'm always excited to meet new people of different backgrounds and specializations.
+				With my expertise in writing, I combine <em>my</em> specialization and passion with <em>your</em> knowledge and expertise to create documentation that is accessible to all
+				I am an excellent team player and have worked in customer service for 10 years, starting from when I was 11 years old.
+				As such, I have a strong work ethic and am always willing to go the extra mile to ensure that the job is done right.
+				After all, bad documentation is worse than no documentation!
+					</p>
+				</div>
+				<img class="about-image" src="images/Professional%20Headshot.png" alt="Professional headshot of Jeffery Lin">
+			</div>
 		</section>
 	</main>
 </body>

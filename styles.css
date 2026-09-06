@@ -1,188 +1,414 @@
+/*
+	CSS means Cascading Style Sheets: it controls how HTML looks.
+	A selector chooses HTML elements. Curly braces { } hold the rules for that selector.
+	Each rule has a property, a colon :, a value, and a semicolon ; at the end.
+	For example: color: red; means "set the color property to the value red."
+	Text between the opening and closing comment markers is ignored by the browser.
+*/
+
+/*
+	CLASS GUIDE:
+	A class is a reusable name placed in HTML, such as class="site-header".
+	In CSS, a period before the name selects that class, such as .site-header.
+	A class can be used on one element or many elements.
+	The class name is chosen by the developer; it is not a built-in HTML command.
+
+	The classes in this project have these jobs:
+	- site-header: separates the unique sticky banner from other headers we may add later.
+	- header-inner: gives the banner one layout container without styling every div.
+	- eyebrow: identifies a category label, so it can differ from normal paragraphs.
+	- tagline: identifies supporting text, so it can be quieter than the main h1.
+	- site-nav: identifies the site's primary navigation, separate from a future footer nav.
+	- contact: groups the contact area, so its layout can differ from the title area.
+	- contact-label: identifies the contact area's small label separately from its links.
+	- about: identifies the About section, so its centered layout stays local to it.
+	- about-copy: identifies the About paragraph, so its line length can be limited.
+	- page-section: gives each standalone page its centered section layout.
+	- page-placeholder: styles temporary text until Portfolio and Resume receive real content.
+
+	Why use classes instead of styling every tag directly?
+	A tag describes meaning, such as header, nav, or p. A class describes a design role.
+	Two paragraphs can need different designs, so classes let us style those roles separately.
+	This keeps the HTML meaningful and lets the design change without changing the content.
+	Annotations placed below a line explain that line.
+*/
+
 :root {
+	/* :root means the highest-level element; values here can be reused everywhere. */
 	--ink: #1e293b;
+	/* The main dark text color. */
+	/* --ink is a custom variable name; #1e293b is a hexadecimal color value. */
 	--muted: #526174;
+	/* The softer color used for supporting text. */
 	--paper: #f7f9fc;
+	/* The light background color behind the page. */
 	--surface: #ffffff;
+	/* A white surface color for panels and backgrounds. */
 	--line: #dbe3ec;
+	/* The light color used for borders and dividing lines. */
 	--accent: #1d5d72;
+	/* The blue-green accent color used for links and labels. */
 	--accent-soft: #e7f1f4;
+	/* A softer version of the accent color for future use. */
 	--max-width: 1120px;
+	/* The widest the page's content is allowed to become. */
+	/* px means pixels, a common unit for exact sizes. */
 }
 
 * {
+	/* * is the universal selector, meaning every HTML element. */
+	/* Includes padding and borders inside an element's width calculation. */
 	box-sizing: border-box;
 }
 
 html {
+	/* The element selector html chooses the <html> element. */
+	/* Moves smoothly when a navigation link jumps to a section. */
 	scroll-behavior: smooth;
 }
 
 body {
+	/* The element selector body chooses everything visible in the page. */
+	/* Removes the browser's default outside space. */
 	margin: 0;
+	/* Uses the reusable dark text color. */
 	color: var(--ink);
+	/* Uses the reusable light page background. */
 	background: var(--paper);
+	/* Uses a serif font for the main reading text. */
 	font-family: Georgia, "Times New Roman", serif;
+	/* Adds comfortable space between lines of text. */
 	line-height: 1.6;
 }
 
+/* site-header is on the <header> element and represents the page's top banner. */
+/* We use a class because this banner's sticky design should not affect every header. */
+/* It controls the banner's position, background, bottom border, and shadow. */
 .site-header {
+	/* A period starts a class selector: .site-header means class="site-header". */
 	position: sticky;
+	/* Keeps the banner visible while the visitor scrolls. */
 	top: 0;
+	/* Sticks the banner to the top edge of the screen. */
 	z-index: 10;
+	/* Places the banner above the content layers. */
 	border-bottom: 1px solid rgba(219, 227, 236, 0.95);
+	/* Adds a thin line below the banner. */
 	background: rgba(255, 255, 255, 0.96);
+	/* Gives the banner a mostly opaque white background. */
 	box-shadow: 0 4px 18px rgba(30, 41, 59, 0.06);
+	/* Adds a subtle shadow below the banner. */
 }
 
+/* header-inner is a layout wrapper: it holds the left text/navigation column and right contact column. */
+/* We use a separate class so this two-column layout belongs only to this wrapper. */
+/* Its grid rules create the two columns and keep the whole banner centered. */
 .header-inner {
+	/* This class selector matches the <div class="header-inner"> inside the banner. */
 	display: grid;
+	/* Uses CSS Grid for the two-column layout. */
 	grid-template-columns: minmax(0, 1fr) auto;
+	/* Makes the left column flexible and the right column fit its content. */
 	gap: 2.5rem;
+	/* Adds space between the title area and contact area. */
 	align-items: center;
+	/* Vertically centers both columns. */
 	max-width: var(--max-width);
+	/* Prevents the content from becoming too wide on large screens. */
 	min-height: 224px;
+	/* Gives the banner a comfortable minimum height. */
 	margin: 0 auto;
+	/* Centers the wrapper horizontally. */
 	padding: 2.5rem 2rem 1.75rem;
+	/* Adds space inside the wrapper: top, sides, and bottom. */
 }
 
+/* eyebrow is a visual label, so it is intentionally smaller, uppercase, and widely spaced. */
+/* The class turns this paragraph into a category label; the p tag alone only means paragraph. */
+/* It helps visitors understand the kind of work represented by this website. */
 .eyebrow {
 	margin: 0 0 0.6rem;
+	/* Removes default paragraph space and adds a little below it. */
 	color: var(--accent);
+	/* Uses the accent color. */
 	font-family: Arial, Helvetica, sans-serif;
+	/* Uses a clean sans-serif font for interface-like text. */
 	font-size: 0.78rem;
+	/* Makes the label small. */
 	font-weight: 700;
+	/* Makes the label bold. */
 	letter-spacing: 0.12em;
+	/* Spreads the letters apart slightly. */
 	text-transform: uppercase;
+	/* Converts the label to uppercase. */
 }
 
+/* Removes default heading margins and tightens heading line spacing. */
 h1,
 h2 {
+	/* A comma means apply the same rules to both selectors: h1 and h2. */
 	margin: 0;
+	/* Removes the browser's default heading margin. */
 	line-height: 1.15;
+	/* Tightens the spacing between heading lines. */
 }
 
 h1 {
-	max-width: 700px;
-	font-size: clamp(2.2rem, 5vw, 4.4rem);
+	/* Styles the largest heading on the page. */
+	/* Stops very long title lines from becoming too wide. */
+	/* Removes the browser's default heading margin. */
+	/* Changes size smoothly for different screen widths. */
+	/* Tightens the spacing between heading lines. */
 	font-weight: 700;
+	/* Makes the title bold. */
 	letter-spacing: -0.02em;
+	/* Pulls the letters slightly closer together. */
 }
 
+/* tagline is supporting text: it explains the writer's purpose without competing with the title. */
+/* A separate class lets this sentence stay quieter than other paragraphs. */
 .tagline {
 	margin: 0.8rem 0 1.45rem;
+	/* Adds space above and below the sentence. */
 	color: var(--muted);
+	/* Uses the softer supporting-text color. */
 	font-size: clamp(1.05rem, 2vw, 1.3rem);
+	/* Scales the text between a minimum and maximum size. */
 }
 
+/* site-nav controls the navigation group's layout, font, spacing, and weight. */
+/* The class distinguishes primary site navigation from a future footer or sidebar nav. */
+/* The links themselves are styled separately by the .site-nav a selector below. */
 .site-nav {
 	display: flex;
+	/* Turns the navigation into a flexible row. */
 	flex-wrap: wrap;
+	/* Allows links to move to another line on small screens. */
 	gap: 0.5rem 1.4rem;
+	/* Adds vertical and horizontal space between links. */
 	font-family: Arial, Helvetica, sans-serif;
+	/* Uses a sans-serif font for navigation. */
 	font-size: 0.9rem;
+	/* Sets the navigation text size. */
 	font-weight: 700;
+	/* Makes the links easier to notice. */
 }
 
+/* Styles links inside the navigation. */
 .site-nav a {
 	color: var(--ink);
+	/* Gives links the normal dark text color. */
 	text-decoration: none;
+	/* Removes the browser's default underline. */
 }
 
+/* Styles navigation links when the mouse or keyboard focuses them. */
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+	/* :hover and :focus-visible are pseudo-classes for temporary user states. */
 	color: var(--accent);
+	/* Changes the link to the accent color. */
 }
 
+/* contact separates personal contact details from the title and navigation. */
+/* The class is useful because contact information has a different visual job from the title area. */
+/* Its border and padding make that separation visible on wide screens. */
 .contact {
 	min-width: 210px;
+	/* Keeps this column wide enough for contact details. */
 	padding-left: 1.5rem;
+	/* Adds space between the border and contact text. */
 	border-left: 1px solid var(--line);
+	/* Creates the divider between the two banner columns. */
 	font-family: Arial, Helvetica, sans-serif;
+	/* Uses a sans-serif font for contact details. */
 	font-size: 0.9rem;
+	/* Sets the contact text size. */
 }
 
+/* contact-label identifies the purpose of the email and phone links. */
+/* Without this class, every paragraph inside contact could receive the same treatment. */
 .contact-label {
 	margin: 0 0 0.6rem;
+	/* Adds a little space below the label. */
 	color: var(--muted);
+	/* Uses the softer supporting-text color. */
 	font-size: 0.75rem;
+	/* Makes the label small. */
 	font-weight: 700;
+	/* Makes the label bold. */
 	letter-spacing: 0.1em;
+	/* Spreads the label's letters apart. */
 	text-transform: uppercase;
+	/* Converts the label to uppercase. */
 }
 
+/* Controls the spacing of paragraphs inside the contact column. */
 .contact p {
 	margin: 0.3rem 0;
+	/* Adds a small vertical gap around each contact paragraph. */
 }
 
+/* Styles email and phone links. */
 .contact a {
 	color: var(--accent);
+	/* Gives email and phone links the accent color. */
 	text-decoration: none;
+	/* Removes the default link underline. */
 }
 
+/* Underlines contact links when they are being used or selected. */
 .contact a:hover,
 .contact a:focus-visible {
 	text-decoration: underline;
+	/* Restores an underline when a contact link is being used. */
 }
 
+/* Styles the main content area below the banner. */
 main {
 	max-width: var(--max-width);
+	/* Prevents the main content from becoming too wide. */
 	margin: 0 auto;
+	/* Centers the main content horizontally. */
 	padding: 6rem 2rem 8rem;
+	/* Adds space inside the main content area. */
 }
 
+/* about identifies the About Me section and gives it a centered presentation. */
+/* We keep it separate because About may have different presentation rules from future sections. */
+/* It also reserves vertical space so the page does not feel crowded below the banner. */
 .about {
 	min-height: 48vh;
-	text-align: center;
+	/* Makes the About section at least 48% of the viewport height. */
+	text-align: left;
+	/* Aligns the About section's content to the left. */
 	scroll-margin-top: 250px;
+	/* Leaves room for the sticky banner when jumping to this section. */
 }
 
 .about h2 {
 	font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-.about-copy {
-	max-width: 680px;
-	margin: 1.5rem auto 0;
-	color: var(--muted);
-	font-size: 1.1rem;
-}
-
-.future-section {
-	min-height: 20vh;
-	scroll-margin-top: 250px;
-	border-top: 1px solid var(--line);
-	margin-top: 5rem;
-	padding-top: 2rem;
-	color: var(--muted);
 	text-align: center;
 }
 
-.future-section h2 {
+.about-subtitle {
+	margin: 0.75rem 0 0;
+	color: var(--muted);
 	font-size: 1.5rem;
-	color: var(--ink);
+	font-weight: 700;
+	text-align: left;
 }
 
+.about-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(240px, 0.7fr);
+	gap: 4rem;
+	margin-top: 2.5rem;
+	align-items: start;
+}
+
+.about-content {
+	min-width: 0;
+}
+
+/* about-copy limits the line length and sets the paragraph's readable supporting-text style. */
+/* The class gives this paragraph a reading width without restricting every paragraph site-wide. */
+.about-copy {
+	max-width: 680px;
+	/* Limits the paragraph's readable line length. */
+	margin: 1.5rem auto 0;
+	/* Adds space above and centers the paragraph. */
+	color: var(--muted);
+	/* Uses the softer supporting-text color. */
+	font-size: 1.1rem;
+	/* Sets a comfortable reading size. */
+	text-align: left;
+	/* Aligns the About Me paragraph text to the left. */
+}
+
+.about-image {
+	width: 100%;
+	max-width: 360px;
+	height: 435px;
+	margin-top: 1.5rem;
+	border: 1px solid var(--line);
+	object-fit: cover;
+}
+
+.page-section {
+	min-height: 48vh;
+	/* Gives each page section a comfortable minimum height. */
+	scroll-margin-top: 250px;
+	/* Leaves room for the sticky banner at the top of the page. */
+	text-align: center;
+	/* Styles the one main section shown on each standalone page. */
+	/* Centers each page section's heading and content. */
+}
+
+.page-section h2 {
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	/* Makes the page heading large and responsive. */
+	color: var(--ink);
+	/* Styles the Portfolio and Resume page headings. */
+	/* Uses the main dark text color. */
+}
+
+.page-placeholder {
+	max-width: 680px;
+	/* Keeps placeholder text readable without making it too wide. */
+	margin: 1.5rem auto 0;
+	/* Adds space above the placeholder and centers it horizontally. */
+	color: var(--muted);
+	/* Uses the softer supporting-text color. */
+	font-size: 1.1rem;
+	/* Styles temporary text until real Portfolio or Resume content is added. */
+	/* Sets a comfortable reading size. */
+}
+
+/* max-width: 700px means the condition is true on smaller screens. */
 @media (max-width: 700px) {
+	/* The opening { begins the conditional group; the final } closes it. */
 	.header-inner {
 		grid-template-columns: 1fr;
+		/* Changes the banner to one column on small screens. */
 		gap: 1.5rem;
+		/* Reduces the gap between mobile banner areas. */
 		min-height: 0;
+		/* Removes the desktop minimum height on small screens. */
 		padding: 1.75rem 1.25rem 1.5rem;
+		/* Uses smaller mobile padding. */
 	}
 
 	.contact {
 		min-width: 0;
+		/* Allows the contact column to shrink on small screens. */
 		padding: 1.25rem 0 0;
+		/* Moves spacing above the contact details. */
 		border-top: 1px solid var(--line);
+		/* Creates a divider above the contact details. */
 		border-left: 0;
+		/* Removes the desktop left divider. */
 	}
 
 	main {
 		padding: 4rem 1.25rem 6rem;
+		/* Reduces main-content padding on small screens. */
 	}
 
 	.about,
-	.future-section {
+	.page-section {
 		scroll-margin-top: 355px;
+		/* Adjusts jump-link spacing for the taller mobile banner. */
+		/* Leaves room for the taller mobile banner during jumps. */
+	}
+
+	.about-layout {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.about-image {
+		min-height: 280px;
 	}
 }

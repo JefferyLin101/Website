@@ -1,0 +1,37 @@
+<!DOCTYPE html> <!-- Declares that this document uses modern HTML5. -->
+<html lang="en"> <!-- Starts the webpage; lang="en" identifies English as its language. -->
+<head> <!-- Contains browser setup information that is mostly invisible. -->
+	<meta charset="UTF-8"> <!-- Allows the page to display letters and symbols correctly. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the layout fit phones and other screen sizes. -->
+	<meta name="description" content="Jeffery Lin - Portfolio"> <!-- Describes this page in search previews. -->
+	<title>Jeffery Lin | Portfolio</title> <!-- Sets the text shown in the browser tab. -->
+	<link rel="stylesheet" href="styles.css"> <!-- Loads the shared visual styling from styles.css. -->
+</head> <!-- Ends the browser-setup area. -->
+<body> <!-- Starts the visible page content. -->
+	<header class="site-header"> <!-- Creates the shared banner; this class gives it its sticky design. -->
+		<div class="header-inner"> <!-- Creates the banner layout with a text column and contact column. -->
+			<div> <!-- Groups the title, tagline, and navigation on the left. -->
+				<p class="eyebrow">Technical writer</p> <!-- Identifies the site category; this class gives it label styling. -->
+				<h1>Jeffery Lin</h1> <!-- The main heading shared across the website. -->
+				<p class="tagline">Closing the gap between people and technology.</p> <!-- Supporting description; this class keeps it quieter than h1. -->
+				<nav class="site-nav" aria-label="Primary navigation"> <!-- Groups the main page links and names them for screen readers. -->
+					<a href="index.html">About Me</a> <!-- Opens the separate About Me page. -->
+					<a href="portfolio.html" aria-current="page">Portfolio</a> <!-- The current page; aria-current tells assistive technology. -->
+					<a href="resume.html">Resume</a> <!-- Opens the separate Resume page. -->
+				</nav> <!-- Ends the navigation group. -->
+			</div> <!-- Ends the left banner column. -->
+			<aside class="contact" aria-label="Contact information"> <!-- Holds contact details in the banner's right column. -->
+				<p class="contact-label">Get in touch</p> <!-- Labels the contact group; this class gives it small-label styling. -->
+				<p><a href="mailto:linjeffery101@gmail.com">linjeffery101@gmail.com</a></p> <!-- mailto opens an email program. -->
+				<p><a href="tel:+19726237917">(972) 623-7917</a></p> <!-- tel lets a phone offer to call this number. -->
+			</aside> <!-- Ends the contact area. -->
+		</div> <!-- Ends the banner layout wrapper. -->
+	</header> <!-- Ends the shared banner. -->
+	<main> <!-- Holds the content for this page only. -->
+		<section class="page-section portfolio" aria-labelledby="portfolio-heading"> <!-- This is the only content section on the Portfolio page. -->
+			<h2 id="portfolio-heading">Portfolio</h2> <!-- Names this page's section and labels it for assistive technology. -->
+			<p class="page-placeholder">Portfolio content will be added here.</p> <!-- Temporary text marking where future work belongs. -->
+		</section> <!-- Ends the Portfolio section. -->
+	</main> <!-- Ends this page's primary content. -->
+</body> <!-- Ends the visible page. -->
+</html> <!-- Ends the webpage. -->
