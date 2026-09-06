@@ -35,20 +35,20 @@
 
 :root {
 	/* :root means the highest-level element; values here can be reused everywhere. */
-	--ink: #1e293b;
+	--ink: #2f241f;
 	/* The main dark text color. */
-	/* --ink is a custom variable name; #1e293b is a hexadecimal color value. */
-	--muted: #526174;
+	/* --ink is a custom variable name; #2f241f is a hexadecimal color value. */
+	--muted: #6f625b;
 	/* The softer color used for supporting text. */
-	--paper: #f7f9fc;
+	--paper: #f7f1eb;
 	/* The light background color behind the page. */
-	--surface: #ffffff;
+	--surface: #fffdf9;
 	/* A white surface color for panels and backgrounds. */
-	--line: #dbe3ec;
+	--line: #dfd2c7;
 	/* The light color used for borders and dividing lines. */
-	--accent: #1d5d72;
-	/* The blue-green accent color used for links and labels. */
-	--accent-soft: #e7f1f4;
+	--accent: #8a5a44;
+	/* The warm coffee-brown accent color used for links and labels. */
+	--accent-soft: #f1e4d8;
 	/* A softer version of the accent color for future use. */
 	--max-width: 1120px;
 	/* The widest the page's content is allowed to become. */
@@ -92,11 +92,11 @@ body {
 	/* Sticks the banner to the top edge of the screen. */
 	z-index: 10;
 	/* Places the banner above the content layers. */
-	border-bottom: 1px solid rgba(219, 227, 236, 0.95);
+	border-bottom: 1px solid rgba(223, 210, 199, 0.95);
 	/* Adds a thin line below the banner. */
 	background: rgba(255, 255, 255, 0.96);
 	/* Gives the banner a mostly opaque white background. */
-	box-shadow: 0 4px 18px rgba(30, 41, 59, 0.06);
+	box-shadow: 0 4px 18px rgba(47, 36, 31, 0.08);
 	/* Adds a subtle shadow below the banner. */
 }
 
