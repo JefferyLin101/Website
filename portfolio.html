@@ -30,8 +30,24 @@
 	<main> <!-- Holds the content for this page only. -->
 		<section class="page-section portfolio" aria-labelledby="portfolio-heading"> <!-- This is the only content section on the Portfolio page. -->
 			<h2 id="portfolio-heading">Portfolio</h2> <!-- Names this page's section and labels it for assistive technology. -->
-			<p class="page-placeholder">Portfolio content will be added here.</p> <!-- Temporary text marking where future work belongs. -->
+			<div class="portfolio-carousel" data-portfolio-carousel> <!-- Groups the project title, preview, description, and controls. -->
+				<div class="portfolio-heading-row"> <!-- Keeps the current project title at the top-left of the carousel. -->
+					<p class="portfolio-count" data-portfolio-count>Project 1 of 2</p> <!-- Shows the current project number. -->
+					<h3 class="portfolio-title" data-portfolio-title>Technical Writing Sample</h3> <!-- Displays the current project title. -->
+				</div>
+				<div class="portfolio-stage"> <!-- Holds the preview and the side arrows. -->
+					<button class="portfolio-control portfolio-control-prev" type="button" data-portfolio-prev aria-label="Show previous project">&#8592;</button> <!-- Moves to the previous project. -->
+					<div class="portfolio-preview" data-portfolio-preview role="img" aria-label="Placeholder for a Google Docs project preview"> <!-- Image slot for an uploaded document preview. -->
+						<span>Google Docs preview goes here</span> <!-- Temporary visual marker until a document image is uploaded. -->
+					</div>
+					<button class="portfolio-control portfolio-control-next" type="button" data-portfolio-next aria-label="Show next project">&#8594;</button> <!-- Moves to the next project. -->
+				</div>
+				<div class="portfolio-description" data-portfolio-description> <!-- Displays the current project's description. -->
+					<p>Upload an image of your Google Docs project into the images folder, then replace this preview slot with that image.</p>
+				</div>
+			</div>
 		</section> <!-- Ends the Portfolio section. -->
 	</main> <!-- Ends this page's primary content. -->
+	<script src="portfolio.js" defer></script> <!-- Loads the carousel behavior after the page has been parsed. -->
 </body> <!-- Ends the visible page. -->
 </html> <!-- Ends the webpage. -->

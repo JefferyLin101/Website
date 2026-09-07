@@ -366,6 +366,201 @@ main {
 	/* Sets a comfortable reading size. */
 }
 
+.resume-document {
+	width: min(100%, 850px);
+	height: 1100px;
+	margin: 2.5rem auto 0;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	background: var(--surface);
+	box-shadow: 0 12px 30px rgba(47, 36, 31, 0.08);
+}
+
+.resume-document iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: var(--surface);
+}
+
+.portfolio-carousel {
+	max-width: 900px;
+	margin: 2.5rem auto 0;
+	text-align: left;
+}
+
+.portfolio-heading-row {
+	min-height: 5.25rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--line);
+}
+
+.portfolio-count {
+	margin: 0 0 0.45rem;
+	color: var(--accent);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.portfolio-title {
+	margin: 0;
+	color: var(--ink);
+	font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.portfolio-stage {
+	display: grid;
+	grid-template-columns: 3rem minmax(0, 1fr) 3rem;
+	gap: 1rem;
+	align-items: center;
+	margin-top: 1.75rem;
+}
+
+.portfolio-preview {
+	min-height: 480px;
+	height: 600px;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	background: var(--surface);
+	color: var(--muted);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.95rem;
+	text-align: center;
+	box-shadow: 0 12px 30px rgba(47, 36, 31, 0.08);
+}
+
+.portfolio-preview iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: var(--surface);
+}
+
+.portfolio-preview-link {
+	display: grid;
+	place-items: center;
+	gap: 0.75rem;
+	width: 100%;
+	height: 100%;
+	color: var(--accent);
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+
+.portfolio-preview-link span {
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.portfolio-preview-link:hover span,
+.portfolio-preview-link:focus-visible span,
+.portfolio-description a:hover,
+.portfolio-description a:focus-visible {
+	text-decoration: underline;
+}
+
+.portfolio-control {
+	display: grid;
+	place-items: center;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	border: 1px solid var(--line);
+	border-radius: 50%;
+	background: var(--surface);
+	color: var(--accent);
+	font-size: 1.4rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.portfolio-control:hover,
+.portfolio-control:focus-visible {
+	background: var(--accent-soft);
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.portfolio-description {
+	max-width: 900px;
+	margin-top: 1.75rem;
+	color: var(--muted);
+	font-size: 1.05rem;
+	line-height: 1.7;
+}
+
+.portfolio-description p {
+	margin: 0;
+}
+
+.portfolio-description ul {
+	margin: 1rem 0 0;
+	padding-left: 1.25rem;
+}
+
+.portfolio-description li + li {
+	margin-top: 0.4rem;
+}
+
+.portfolio-description a {
+	display: inline-block;
+	margin-top: 0.75rem;
+	color: var(--accent);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 700;
+}
+
+.is-entering-right .portfolio-heading-row,
+.is-entering-right .portfolio-preview,
+.is-entering-right .portfolio-description {
+	animation: portfolio-enter-right 360ms ease both;
+}
+
+.is-entering-left .portfolio-heading-row,
+.is-entering-left .portfolio-preview,
+.is-entering-left .portfolio-description {
+	animation: portfolio-enter-left 360ms ease both;
+}
+
+@keyframes portfolio-enter-right {
+	from {
+		opacity: 0;
+		transform: translateX(1.5rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes portfolio-enter-left {
+	from {
+		opacity: 0;
+		transform: translateX(-1.5rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.is-entering-right .portfolio-heading-row,
+	.is-entering-right .portfolio-preview,
+	.is-entering-right .portfolio-description,
+	.is-entering-left .portfolio-heading-row,
+	.is-entering-left .portfolio-preview,
+	.is-entering-left .portfolio-description {
+		animation: none;
+	}
+}
+
 /* max-width: 700px means the condition is true on smaller screens. */
 @media (max-width: 700px) {
 	/* The opening { begins the conditional group; the final } closes it. */
@@ -410,5 +605,24 @@ main {
 
 	.about-image {
 		min-height: 280px;
+	}
+
+	.portfolio-stage {
+		grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
+		gap: 0.5rem;
+	}
+
+	.portfolio-preview {
+		min-height: 360px;
+		height: 480px;
+	}
+
+	.resume-document {
+		height: 900px;
+	}
+
+	.portfolio-control {
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 }
